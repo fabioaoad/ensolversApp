@@ -1,0 +1,27 @@
+<br>
+<br>
+
+<form (ngSubmit)="getItems()"
+              [formGroup]="miFormulario">
+        <div class="mb-row">
+<!--          <label class="col-sm-3 col-form-label">Productos</label>-->
+          <h2 class="example-h2">Editing Task: "NOMBRE TAREA"</h2>
+          <div class="col-sm-9">
+            <input type="text"
+                   class="form-control"
+                   formControlName="nombre"
+                   placeholder="Nombre de la Tarea">
+          </div>
+        </div>
+</form>
+
+&nbsp;
+<div class="row">
+<div class="col">
+  <button mat-raised-button color="primary" type="submit" (click)="actualizarItem()">Save</button>
+  <button mat-raised-button color="primary" type="submit" (click)="cancelar()">Cancel</button>
+</div>
+</div>
+
+
+

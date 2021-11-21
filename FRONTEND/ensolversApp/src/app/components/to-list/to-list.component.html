@@ -1,0 +1,59 @@
+<br>
+<br>
+
+            <h2 class="example-h2">To Do List</h2>
+
+
+          <div class="row" *ngFor="let item of listadoItems" >
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <mat-checkbox class="example-margin" >{{item.name}}</mat-checkbox>
+                  <button class="btn btn-dark float-end"
+                          type="submit"
+                          [disabled]="checked"
+                          (click)="borrar(item._id!)">remove</button>
+
+                  <button class="btn btn-dark float-end"
+                          type="submit"
+                          [disabled]="checked"
+                          (click)="editar(item._id!)">edit</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+<form (ngSubmit)="crearItem()"
+      [formGroup]="miFormulario">
+  <div class="mb-row">
+    <div class="col-sm-9">
+      <input type="text"
+             class="form-text"
+             formControlName="nombre"
+             placeholder="Nombre de la Tarea">
+      <button mat-raised-button color="primary" type="submit" >Add</button>
+    </div>
+
+  </div>
+
+</form>
+
+
+<div class="row">
+  <div class="col">
+
+    <span>Valid</span>
+    <pre>{{ miFormulario.valid }}</pre>
+
+    <span>Value</span>
+    <pre>{{ miFormulario.value | json }}</pre>
+  </div>
+
+</div>
+
+
+
